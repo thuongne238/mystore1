@@ -1,0 +1,25 @@
+﻿@model mystore1.Models.Product
+<head>
+    <style>
+        img {
+            height: 250px;
+            max-width: 250px;
+        }
+    </style>
+</head>
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="bg-success">CHI TIẾT sẢN PHẨM</h2>
+@Html.Partial("PVDetailInfo", Model)
+
+
+
+<div class="form-group">
+    <div class="col-md-offset-3 col-md-9">
+        @Html.ActionLink("Sửa", "Edit", new { id = Model.ProductID }, new { @class = "btn btn-prymary " })
+        @Html.ActionLink("Quay Lại Danh Sách", "Index", null, new { @class = "btn btn-prymary" })|
+    </div>
+</div>

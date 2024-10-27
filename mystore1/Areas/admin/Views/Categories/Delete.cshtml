@@ -1,0 +1,31 @@
+﻿@model mystore1.Models.Category
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="bg-success">Xóa Danh Mục</h2>
+
+<h3 class="bg-danger">Bạn có chắc chắn muốn xóa danh mục này?</h3>
+    <div>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group ">
+                <div class="control-lable col-md-2">Tên danh mục</div>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.CategoryName)
+                </div>
+            </div>
+            <div class="form-group ">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Xóa" class="btn btn-primary" /> |
+                    @Html.ActionLink("Quay Lại Danh Sách", "Index", new { id = Model.CategoryID }, new { @class = "btn btn-prymary" })|
+
+                </div>
+            </div>
+        }
+
+    </div>
